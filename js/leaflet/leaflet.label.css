@@ -1,0 +1,56 @@
+.leaflet-label {
+	background: white; /*rgb(235, 235, 235);*/
+	/*background: rgba(235, 235, 235, 0.81);*/
+	background-clip: padding-box;
+	/*border-color: #777;*/
+	border-color: white; /*rgba(0,0,0,0.25);*/
+	border-radius: 4px;
+	/*border-style: solid;
+	border-width: 4px;*/
+        box-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+        -webkit-box-shadow: 0 3px 18px rgba(0, 0, 0, 0.33);
+	color: #111;
+	display: block;
+	font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	/*font-weight: bold;*/
+	padding: 3px 6px; /*1px 6px;*/
+	position: absolute;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	white-space: nowrap;
+	z-index: 6;
+}
+
+.leaflet-label:before {
+	border-right: 6px solid white; /*black;*/
+	border-right-color: inherit;
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	content: "";
+	position: absolute;
+	top: 6px; /*5px;*/
+	left: -6px; /*-10px;*/
+}
+/*
+     FILE ARCHIVED ON 05:11:29 Apr 07, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 04:02:23 Nov 24, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  esindex: 0.027
+  RedisCDXSource: 17.017
+  CDXLines.iter: 14.369 (3)
+  captures_list: 158.116
+  LoadShardBlock: 120.613 (3)
+  exclusion.robots.policy: 0.189
+  exclusion.robots: 0.204
+  PetaboxLoader3.datanode: 241.291 (5)
+  PetaboxLoader3.resolve: 114.299 (2)
+  load_resource: 246.945
+*/

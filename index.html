@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <title>Osmapa.pl - Mapa OpenStreetMap Polska</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Osmapa.pl - mapa OpenStreetMap przygotowana przez Stowarzyszenie OpenStreetMap Polska.">
+    <meta name="author" content="Paweł Marynowski (yarlu.pl)">
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="js/leaflet/leaflet.css"/>
+    <!--[if lte IE 8]><link rel="stylesheet" href="js/leaflet/leaflet.ie.css" /><![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+    <link rel="stylesheet" href="js/leaflet/MarkerCluster.css"/>
+    <link rel="stylesheet" href="js/leaflet/MarkerCluster.Default.css"/>
+    <!--[if lte IE 8]><link rel="stylesheet" href="js/leaflet/MarkerCluster.Default.ie.css" /><![endif]-->
+    <link rel="stylesheet" href="js/leaflet/leaflet.label.css"/>
+    <script src="js/leaflet/leaflet.markercluster.js"></script>
+    <script src="js/leaflet/leaflet.label.js"></script>
+    <script src="js/leaflet/leaflet.hash.js"></script>
+    <script src="js/leaflet/leaflet.geoloc.js"></script>
+    <script src="js/leaflet/leaflet.bing.js"></script>
+    <script src="js/leaflet/leaflet.fullscreen.js"></script>
+    <script src="js/leaflet/leaflet.polyline-encoded.js"></script>
+	<script src="js/leaflet/leaflet-grids.js"></script>
+
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="js/jquery/jquery.contextmenu.css"/>
+    <link rel="shortcut icon" href="http://openstreetmap.org.pl/osm/wp-content/uploads/2011/10/favicon.png"/>
+  </head>
+
+  <body>  
+    <div class="navbar navbar-static-top" id="top">
+      <div class="navbar-inner">
+        <div class="pull-right">
+          <span class="garmin"><a href="http://garmin.osmapa.pl/">Osmapa na Garmina</a></span>
+          <span id="search" class="active">Szukaj</span><span id="nav">Nawiguj</span>
+        </div>
+        <a id="logo" href="."><img src="img/logo.png"/></a>
+        <em>mapa, którą możesz <strong><a href="http://openstreetmap.org.pl/osm/o-openstreetmap/">współtworzyć</a></strong></em>
+      </div>
+    </div>
+
+    <div class="container">
+      <a id="map-loading" style="display: none;"><img src="http://osmapa.pl/img/loading.gif" alt="Wczytywanie..."/></a>
+      <div id="map"></div>
+
+      <div class="tool" id="tool-search">
+        <div class="tool-bar">
+          <input type="text" placeholder="Wpisz adres"><button class="btn">Szukaj</button>
+        </div>
+        <div class="tool-results-container">
+          <div id="search-results" class="tool-results"></div>
+          <button id="search-clear" class="btn tool-clear">Wyczyść</button>
+        </div>
+      </div>
+	  <!--<div class="tool" id="tool-showIn">
+        <div class="tool-bar">
+          <a href="http://polska.e-mapa.net">http://polska.e-mapa.net</a>
+        </div>
+      </div>-->
+      <div class="tool" id="tool-nav">
+        <div class="tool-bar">
+          <input id="nav-start" class="input-round" type="text" placeholder="Wpisz adres" value="">
+          <input id="nav-end" class="input-round" type="text" placeholder="Wpisz adres" value="">
+          <button id="nav-search" class="btn">Wyznacz trasę</button>
+        </div>
+        <div class="tool-results-container">
+          <div id="nav-results" class="tool-results">Szukam...</div>
+          <button id="nav-clear" class="btn tool-clear">Wyczyść</button>
+        </div>
+      </div>
+
+      <div class="box box-left" id="box-layers">
+        <h3 class="shadow-left">&nbsp;</h3>
+        <div class="shadow-left">
+          <p>Warstwa podstawowa</p>
+          <div class="btn-group" data-toggle="buttons-radio">
+            <button id="layer-os" name="osmapa" class="btn" data-toggle="tooltip" title="Styl Osmapa.pl">&nbsp;</button>
+            <!--<button id="layer-fs" name="foursq" class="btn" title="Styl Foursquare">&nbsp;</button>-->
+            <button id="layer-ma" name="osm" class="btn" title="Styl Mapnik">&nbsp;</button>
+            <button id="layer-hb" name="hikebike" class="btn" title="Styl Hike&amp;Bike">&nbsp;</button>
+			<!-- Wykomentowane przez GEO-SYSTEM -->
+            <!--<button id="layer-ms" name="mapsurfer" class="btn" title="Styl MapSurfer">&nbsp;</button>
+            <button id="layer-bw" name="mapsurferbw" class="btn" title="Styl Black&Wite">&nbsp;</button>
+            <button id="layer-mq" name="mapquest" class="btn" title="Styl Mapquest">&nbsp;</button>-->			
+            <!--<button id="sk" name="skobbler" class="btn">&nbsp;</button>-->
+            <button id="layer-bi" name="bing" class="btn" title="Satelita Bing">&nbsp;</button>
+          </div>
+          <p>Nakładki</p>
+          <!--<button id="overlay-sh" data-toggle="button" name="shadow" class="btn" title="Cieniowanie">&nbsp;</button>
+          <button id="overlay-tr" data-toggle="button" name="transport" class="btn" title="Transport publiczny">&nbsp;</button>
+          <button id="overlay-pa" data-toggle="button" name="paths" class="btn" title="Szlaki turystyczne">&nbsp;</button>-->
+		  <button id="overlay-impa2" data-toggle="button" name="impa2" class="btn" title="Krajowa Integracja Punktów Adresowych">&nbsp;</button>
+		  <button id="overlay-kieg" data-toggle="button" name="kieg" class="btn" title="Krajowa Integracja Ewidencji Gruntów i Budynków">&nbsp;</button>		  
+		  <button id="overlay-kiut" data-toggle="button" name="kiut" class="btn" title="Krajowa Integracja Uzbrojenia Terenu">&nbsp;</button>
+		  <button id="overlay-mpzp" data-toggle="button" name="mpzp" class="btn" title="Krajowa Integracja Miejscowych Planów Zagospodarowania Przestrzennego">&nbsp;</button>
+		  <p>Sekcje map</p>
+		  <button id="overlay-sekcje_92_10000" data-toggle="button" name="sekcje_92_10000" class="btn" title="Sekcje mapy - PUWG 1992 1:10 000">&nbsp;</button>
+		  <button id="overlay-sekcje_92_5000" data-toggle="button" name="sekcje_92_5000" class="btn" title="Sekcje mapy - PUWG 1992 1:5000">&nbsp;</button>
+		  <p>Siatki współrzędnych</p>
+		  <button id="overlay-siatka" data-toggle="button" name="siatka" class="btn" title="Geograficzna">&nbsp;</button>
+        </div>
+      </div>
+	  
+	  <div class="box box-left box-showIn-top" id="box-showIn">
+        <h3 class="shadow-left">&nbsp;</h3>
+        <div class="shadow-left">
+          <p>Pokaż miejsce w serwisie mapowym:</p>
+          <div class="btn-group" data-toggle="buttons-radio">
+           <a href="http://polska.e-mapa.net/" target="_blank" id="showIn_polska_e_mapa_net"><img class="showIn-img" src="http://polska.e-mapa.net/application/images/geoportal_odp_3.png"/></a>
+           <a href="http://geoportal.gov.pl/" target="_blank" id="showIn_geoportal_gov_pl"><img class="showIn-img" src="js/leaflet/images/geoportal_01.png"/></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="box box-left" id="box-edit">
+        <h3 class="shadow-left">&nbsp;</h3>
+        <div class="shadow-left">
+          <button id="ideditor" class="btn btn-small">iD</button>
+          <button id="potlatch" class="btn btn-small">P2</button>
+          <button id="josm" class="btn btn-small">JOSM</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery/jquery-2.0.3.min.js"></script>
+    <script src="js/jquery/jquery.xdomainrequest.js"></script>
+    <script src="js/jquery/jquery.contextmenu.js"></script>
+    
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/layers.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/routing.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/proj4.min.js"></script>
+    <!--iframe src="http://osmapa.pl/" width="0" height="0" id="josm-iframe"></iframe-->
+  </body>
+</html>

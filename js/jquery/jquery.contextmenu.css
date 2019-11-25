@@ -1,0 +1,79 @@
+.b-m-mpanel {
+    background-color: rgba(255,255,255,.8);
+    padding: 2px 0;
+    position: absolute;
+    z-index: 99997;
+    left:0px;
+    top:0px;
+    border-radius: 4px;
+    -webkit-box-shadow: 2px 2px 5px 0px #aaa;
+    -moz-box-shadow: 2px 2px 5px 0px #aaa;
+    -ms-box-shadow: 2px 2px 5px 0px #aaa;
+    -o-box-shadow: 2px 2px 5px 0px #aaa;
+    box-shadow: 2px 2px 5px 0px #aaa;
+}
+.b-m-split {
+    height: 6px;
+    background: url(/js/jquery/splitLine.gif) center repeat-x;
+    font-size: 0px;
+    margin: 0 2px;
+}
+.b-m-item, .b-m-idisable
+{
+    padding: 4px 2px;
+    margin: 0 2px 0 3px;
+    cursor: normal;
+    line-height:100%;
+}
+
+.b-m-idisable
+{
+    color:#808080;
+}
+.b-m-ibody, .b-m-arrow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+	
+}
+.b-m-arrow {
+    background: url(/js/jquery/m_arrow.gif) right  no-repeat;	
+}
+.b-m-idisable .b-m-arrow
+{
+    background:none;
+}
+.b-m-item img, .b-m-ifocus img, .b-m-idisable img {
+	margin-right: 8px;
+}
+.b-m-ifocus {
+    background-color: rgba(220,220,220,.8);
+    padding: 4px 2px;
+    margin: 0 2px 0 3px;
+    cursor: hand;
+    cursor: pointer;
+    line-height:100%;
+}
+.b-m-idisable img {
+    visibility:hidden;
+}
+/*
+     FILE ARCHIVED ON 05:11:32 Apr 07, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 04:02:32 Nov 24, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  esindex: 0.026
+  RedisCDXSource: 2.2
+  CDXLines.iter: 16.694 (3)
+  captures_list: 146.966
+  LoadShardBlock: 120.873 (3)
+  exclusion.robots.policy: 0.483
+  exclusion.robots: 0.504
+  PetaboxLoader3.datanode: 87.138 (5)
+  PetaboxLoader3.resolve: 166.325 (4)
+  load_resource: 168.604
+*/

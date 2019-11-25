@@ -1,0 +1,28 @@
+.leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {
+	-webkit-transition: -webkit-transform 0.25s ease-out, opacity 0.25s ease-in;
+	-moz-transition: -moz-transform 0.25s ease-out, opacity 0.25s ease-in;
+	-o-transition: -o-transform 0.25s ease-out, opacity 0.25s ease-in;
+	transition: transform 0.25s ease-out, opacity 0.25s ease-in;
+	}
+
+/*
+     FILE ARCHIVED ON 05:11:31 Apr 07, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 04:02:21 Nov 24, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  PetaboxLoader3.resolve: 106.955 (2)
+  PetaboxLoader3.datanode: 43.436 (5)
+  captures_list: 50.607
+  load_resource: 126.023
+  CDXLines.iter: 13.681 (3)
+  LoadShardBlock: 30.563 (3)
+  exclusion.robots.policy: 0.175
+  exclusion.robots: 0.189
+  esindex: 0.021
+  RedisCDXSource: 1.651
+*/

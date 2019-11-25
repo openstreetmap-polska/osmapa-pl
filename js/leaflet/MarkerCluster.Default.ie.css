@@ -1,0 +1,44 @@
+ /* IE 6-8 fallback colors */
+.marker-cluster-small {
+	background-color: rgb(181, 226, 140);
+	}
+.marker-cluster-small div {
+	background-color: rgb(110, 204, 57);
+	}
+
+.marker-cluster-medium {
+	background-color: rgb(241, 211, 87);
+	}
+.marker-cluster-medium div {
+	background-color: rgb(240, 194, 12);
+	}
+
+.marker-cluster-large {
+	background-color: rgb(253, 156, 115);
+	}
+.marker-cluster-large div {
+	background-color: rgb(241, 128, 23);
+}
+
+
+/*
+     FILE ARCHIVED ON 05:11:35 Apr 07, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 04:53:57 Nov 24, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 140.95 (3)
+  RedisCDXSource: 1.863
+  exclusion.robots.policy: 0.263
+  PetaboxLoader3.datanode: 89.283 (5)
+  PetaboxLoader3.resolve: 171.335 (4)
+  exclusion.robots: 0.283
+  CDXLines.iter: 15.216 (3)
+  esindex: 0.027
+  load_resource: 170.849
+  captures_list: 165.222
+*/
