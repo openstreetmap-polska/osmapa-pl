@@ -155,7 +155,7 @@ search.start = function(query) {
         type: "GET",
         dataType : 'text',
         crossDomain: true,
-        url: "http://www.punktyadresowe.pl/lokalizacja.php",
+        url: "https://www.punktyadresowe.pl/lokalizacja.php",
         data: "adres="+query+"&crs=4326&format=xml",
         error:function(xhr, status, errorThrown) {
             alert("Błąd: " + errorThrown);
